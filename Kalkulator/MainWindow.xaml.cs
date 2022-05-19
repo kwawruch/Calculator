@@ -20,12 +20,14 @@ namespace Kalkulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<float> historyNumbers = new List<float>();
         public char lastOperation = '0';
         public bool resultsVisible = false;
         public MainWindow()
         {
             InitializeComponent();
         }
+
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
@@ -58,40 +60,59 @@ namespace Kalkulator
             }
             TextBlockResult.Text = TextBlockResult.Text.Remove(TextBlockResult.Text.Length - 1);
             if (TextBlockResult.Text == "") TextBlockResult.Text = "0";
+            Operation.SetFalse();
         }
-
+        
+        
         private void ButtonCount_Click(object sender, RoutedEventArgs e)
         {
-            if (lastOperation == '+') TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) + int.Parse(TextBlockResult.Text)).ToString();
-            else if (lastOperation == '-') TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) - int.Parse(TextBlockResult.Text)).ToString();
+            Operation.SetFalse();
+            if (lastOperation == '+')
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockResult.Text = (historyNumbers[historyNumbers.Count - 1] + historyNumbers[historyNumbers.Count - 2]).ToString();
+            }
+            else if (lastOperation == '-')
+            {
+                TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) - int.Parse(TextBlockResult.Text)).ToString();
+            }
 
             resultsVisible = true;
         }
+
+        
         private void ButtonAddition_Click(object sender, RoutedEventArgs e)
         {
-            TextBlockMemory.Text = TextBlockResult.Text;
-            TextBlockResult.Text = "0";
-            if (TextBlockResult.Text != "")
+            if (Operation.addiction==false)
             {
-                if (TextBlockMemory.Text == "") TextBlockMemory.Text = "0";
-                TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) + int.Parse(TextBlockResult.Text)).ToString();
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockMemory.Text = TextBlockResult.Text;
                 TextBlockResult.Text = "0";
+                lastOperation = '+';
+                Operation.addiction = true;
             }
-            lastOperation = '+';
+            else Operation.SetFalse(add:true);
+            
         }
 
-            private void ButtonSubstraction_Click(object sender, RoutedEventArgs e)
+        private void ButtonSubstraction_Click(object sender, RoutedEventArgs e)
         {
-            TextBlockMemory.Text = TextBlockResult.Text;
-            TextBlockResult.Text = "0";
-            if (TextBlockResult.Text != "")
+            if(Operation.substration==false)
             {
-                if (TextBlockMemory.Text == "") TextBlockMemory.Text = "0";
-                TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) - int.Parse(TextBlockResult.Text)).ToString();
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockMemory.Text = TextBlockResult.Text;
                 TextBlockResult.Text = "0";
+                lastOperation = '-';
+                Operation.substration = true;
             }
-            lastOperation = '-';
+            else Operation.SetFalse(sub: true);
         }
+
+        private void ButtonPercent_Click(object sender, RoutedEventArgs e)
+        {
+            TextBlockResult.Text = (float.Parse(TextBlockResult.Text) / 100).ToString("0,00 %");
+        }
+
         //Multiplication, Division
     }
 }
