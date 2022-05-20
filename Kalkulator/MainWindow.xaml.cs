@@ -74,7 +74,18 @@ namespace Kalkulator
             }
             else if (lastOperation == '-')
             {
-                TextBlockResult.Text = (int.Parse(TextBlockMemory.Text) - int.Parse(TextBlockResult.Text)).ToString();
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockResult.Text = (float.Parse(TextBlockMemory.Text) - float.Parse(TextBlockResult.Text)).ToString();
+            }
+            else if(lastOperation=='*')
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockResult.Text = (float.Parse(TextBlockMemory.Text) * float.Parse(TextBlockResult.Text)).ToString();
+            }
+            else if(lastOperation=='/')
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockResult.Text = (float.Parse(TextBlockMemory.Text) / float.Parse(TextBlockResult.Text)).ToString();
             }
 
             resultsVisible = true;
@@ -110,9 +121,38 @@ namespace Kalkulator
 
         private void ButtonPercent_Click(object sender, RoutedEventArgs e)
         {
-            TextBlockResult.Text = (float.Parse(TextBlockResult.Text) / 100).ToString("0,00 %");
+            if(!resultsVisible)
+            {
+                TextBlockResult.Text = float.Parse(TextBlockResult.Text).ToString("0.00%");
+                resultsVisible = true;
+            }
         }
 
-        //Multiplication, Division
+        private void ButtonMultiplication_Click(object sender, RoutedEventArgs e)
+        {
+            if (Operation.multiplication == false)
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockMemory.Text = TextBlockResult.Text;
+                TextBlockResult.Text = "0";
+                lastOperation = '*';
+                Operation.multiplication = true;
+            }
+            else Operation.SetFalse(multi: true);
+        }
+
+        private void ButtonDivision_Click(object sender, RoutedEventArgs e)
+        {
+            if (Operation.division == false)
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockMemory.Text = TextBlockResult.Text;
+                TextBlockResult.Text = "0";
+                lastOperation = '/';
+                Operation.division = true;
+            }
+            else Operation.SetFalse(div: true);
+        }
+
     }
 }

@@ -47,6 +47,10 @@
             <Button Grid.Row="2" Grid.Column="4" Content="-" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonSubstraction_Click" ></Button>
             <Button Grid.Row="3" Grid.Column="4" Content="+" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonAddition_Click"></Button>
             <Button Grid.Row="4" Grid.Column="4" Content="=" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonCount_Click"></Button>
+            <Button Grid.Row="5" Grid.Column="3" Content="," FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="3" Grid.Column="0" Content="✖" FontSize="30" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonMultiplication_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="0" Content="÷" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonDivision_Click"></Button>
+            
         </Grid>
         <TextBlock Name="TextBlockMemory" HorizontalAlignment="Left" Margin="297,5,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Foreground="Gray"/>
 
