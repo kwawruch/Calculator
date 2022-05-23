@@ -28,6 +28,24 @@ namespace Kalkulator
             InitializeComponent();
         }
 
+        public void ResizeResults()
+        {
+            if (TextBlockResult.Text.Length > 12)
+            {
+                TextBlockResult.FontSize = 40;
+            }
+            else TextBlockResult.FontSize = 50;
+        }
+        public void UpdateResults(char lastOperation)
+        {
+            if(TextBlockResult.Text != "")
+            {
+                historyNumbers.Add(float.Parse(TextBlockResult.Text));
+                TextBlockMemory.Text = TextBlockResult.Text;
+                TextBlockResult.Text = "";
+            }
+            this.lastOperation = lastOperation;
+        }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +105,6 @@ namespace Kalkulator
                 historyNumbers.Add(float.Parse(TextBlockResult.Text));
                 TextBlockResult.Text = (float.Parse(TextBlockMemory.Text) / float.Parse(TextBlockResult.Text)).ToString();
             }
-
             resultsVisible = true;
         }
 
@@ -96,24 +113,17 @@ namespace Kalkulator
         {
             if (Operation.addiction==false)
             {
-                historyNumbers.Add(float.Parse(TextBlockResult.Text));
-                TextBlockMemory.Text = TextBlockResult.Text;
-                TextBlockResult.Text = "0";
-                lastOperation = '+';
+                UpdateResults('+');
                 Operation.addiction = true;
             }
             else Operation.SetFalse(add:true);
-            
         }
 
         private void ButtonSubstraction_Click(object sender, RoutedEventArgs e)
         {
             if(Operation.substration==false)
             {
-                historyNumbers.Add(float.Parse(TextBlockResult.Text));
-                TextBlockMemory.Text = TextBlockResult.Text;
-                TextBlockResult.Text = "0";
-                lastOperation = '-';
+                UpdateResults('-');
                 Operation.substration = true;
             }
             else Operation.SetFalse(sub: true);
@@ -132,10 +142,7 @@ namespace Kalkulator
         {
             if (Operation.multiplication == false)
             {
-                historyNumbers.Add(float.Parse(TextBlockResult.Text));
-                TextBlockMemory.Text = TextBlockResult.Text;
-                TextBlockResult.Text = "0";
-                lastOperation = '*';
+                UpdateResults('*');
                 Operation.multiplication = true;
             }
             else Operation.SetFalse(multi: true);
@@ -145,14 +152,19 @@ namespace Kalkulator
         {
             if (Operation.division == false)
             {
-                historyNumbers.Add(float.Parse(TextBlockResult.Text));
-                TextBlockMemory.Text = TextBlockResult.Text;
-                TextBlockResult.Text = "0";
-                lastOperation = '/';
+                UpdateResults('/');
                 Operation.division = true;
             }
             else Operation.SetFalse(div: true);
         }
 
+        private void ButtonSqrt_Click(object sender, RoutedEventArgs e)
+        {
+            Operation.SetFalse();
+            historyNumbers.Add(float.Parse(TextBlockResult.Text));
+            TextBlockMemory.Text = TextBlockResult.Text;
+            TextBlockResult.Text = Math.Sqrt(historyNumbers.Last()).ToString();
+            ResizeResults();
+        }
     }
 }

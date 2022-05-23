@@ -31,26 +31,26 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="3" Grid.Column="1" Content="1" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="3" Grid.Column="2" Content="2" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="3" Grid.Column="3" Content="3" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="2" Grid.Column="1" Content="4" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="2" Grid.Column="2" Content="5" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="2" Grid.Column="3" Content="6" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="1" Grid.Column="1" Content="7" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="1" Grid.Column="2" Content="8" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="1" Grid.Column="3" Content="9" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="4" Grid.Column="2" Content="0" FontSize="64" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="3" Grid.Column="1" Content="1" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="3" Grid.Column="2" Content="2" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="3" Grid.Column="3" Content="3" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Content="4" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="2" Content="5" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="3" Content="6" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="1" Content="7" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="2" Content="8" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="3" Content="9" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="4" Grid.Column="2" Content="0" FontSize="40" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
 
-            <Button Grid.Row="0" Grid.Column="4" Content="&lt;&lt;" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonRemove_Click"></Button>
-            <Button Grid.Row="1" Grid.Column="4" Content="%" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonPercent_Click"  ></Button>
-            <Button Grid.Row="2" Grid.Column="4" Content="-" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonSubstraction_Click" ></Button>
-            <Button Grid.Row="3" Grid.Column="4" Content="+" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonAddition_Click"></Button>
-            <Button Grid.Row="4" Grid.Column="4" Content="=" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonCount_Click"></Button>
-            <Button Grid.Row="5" Grid.Column="3" Content="," FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
-            <Button Grid.Row="3" Grid.Column="0" Content="✖" FontSize="30" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonMultiplication_Click"></Button>
-            <Button Grid.Row="2" Grid.Column="0" Content="÷" FontSize="50" Background="WhiteSmoke" BorderThickness="0" Margin="2,2" Click="ButtonDivision_Click"></Button>
-            
+            <Button Grid.Row="0" Grid.Column="4" Content="⌫" FontSize="25" Background="White" BorderThickness="0" Margin="2,2" Click="ButtonRemove_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="4" Content="%" FontSize="30" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonPercent_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="4" Content="-" FontSize="50" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonSubstraction_Click" ></Button>
+            <Button Grid.Row="3" Grid.Column="4" Content="+" FontSize="40" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonAddition_Click"></Button>
+            <Button Grid.Row="4" Grid.Column="4" Content="=" FontSize="50" Background="#FFACE0F3" BorderThickness="0" Margin="2,2" Click="ButtonCount_Click"></Button>
+            <Button Grid.Row="5" Grid.Column="3" Content="," FontSize="40" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonNumber_Click"></Button>
+            <Button Grid.Row="3" Grid.Column="0" Content="✖" FontSize="20" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonMultiplication_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="0" Content="÷" FontSize="40" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonDivision_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="0" Content="√x" FontSize="30" Background="#FFDADADA" BorderThickness="0" Margin="2,2" Click="ButtonSqrt_Click"></Button>
         </Grid>
         <TextBlock Name="TextBlockMemory" HorizontalAlignment="Left" Margin="297,5,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Foreground="Gray"/>
 
